@@ -14,6 +14,10 @@ class CarTest extends TestCase
     public function test_year_of_the_car_is_not_empty()
     {
         $car = new Car(['model' => 'Gol', 'year' => 2020, 'is_sold' => false]);
+
+        if ($car->year === null) {
+            throw new TypeError('The year of the car cannot be empty');
+        }
         $this->assertNotEmpty($car->year);
     }
 
