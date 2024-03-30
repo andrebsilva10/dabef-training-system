@@ -17,7 +17,9 @@ class CarFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "model" => fake()->name(),
+            "year" => fake()->numberBetween(1900, 2024),
+            "is_sold" => fake()->boolean(),
         ];
     }
 }
